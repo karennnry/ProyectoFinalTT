@@ -1,0 +1,187 @@
+/* css/diploma.css */
+
+/* Contenedor del diploma con diseño de certificado */
+
+
+/* Borde interior decorativo */
+.diploma::before {
+    content: "";
+    position: absolute;
+    top: 10px; left: 10px; right: 10px; bottom: 10px;
+    border: 2px solid var(--color-acento);
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+.diploma-logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--color-primario);
+    margin-bottom: 20px;
+    font-family: var(--fuente-principal);
+}
+
+.diploma h1 {
+    font-size: 36px;
+    color: var(--color-texto);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.diploma h2 {
+    font-size: 20px;
+    font-weight: normal;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.diploma .nombre-estudiante {
+    font-size: 40px;
+    color: var(--color-secundario);
+    border-bottom: 2px solid #ccc;
+    display: inline-block;
+    padding: 0 20px 10px;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.diploma p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.diploma .nota-final {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-primario);
+    margin: 20px 0;
+}
+
+.firmas {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.firma {
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    width: 200px;
+    font-size: 14px;
+    color: #333;
+    font-family: var(--fuente-principal);
+}
+
+/* --- Botón de Descarga/Impresión (Uiverse) --- */
+.btn-descarga {
+  position: relative;
+  width: 200px; /* Un poco más ancho para que quepa el texto */
+  height: 45px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #146c54;
+  background-color: #618C4D; /* Verde similar al de TalkaTive */
+  overflow: hidden;
+  border-radius: 5px; /* Un pequeño borde redondeado */
+  margin: 0 auto;
+}
+
+.btn-descarga, .btn-descarga__icon, .btn-descarga__text {
+  transition: all 0.3s;
+}
+
+.btn-descarga .btn-descarga__text {
+  transform: translateX(25px);
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: var(--fuente-principal);
+  z-index: 1; 
+}
+
+.btn-descarga .btn-descarga__icon {
+  position: absolute;
+  transform: translateX(155px);
+  height: 100%;
+  width: 45px;
+  background-color: #214001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-descarga .svg {
+  width: 22px;
+  fill: #6DCD55;
+}
+
+.btn-descarga:hover {
+  background: #17795E;
+}
+
+.btn-descarga:hover .btn-descarga__text {
+  color: transparent;
+}
+
+.btn-descarga:hover .btn-descarga__icon {
+  width: 200px;
+  transform: translateX(0);
+}
+
+.btn-descarga:active .btn-descarga__icon {
+  background-color: #146c54;
+}
+
+.btn-descarga:active {
+  border: 1px solid #146c54;
+}
+
+/* Fondo para la página del diploma */
+body.fondo-diploma {
+    /* Tu gradiente radial */
+    background: radial-gradient(125% 125% at 50% 10%, #fff 40%, #D55429 100%);
+    background-attachment: fixed; /* Para que no se mueva si hay scroll */
+    min-height: 100vh;
+}
+
+/* Nos aseguramos de que el diploma tenga un fondo blanco sólido 
+   para que el texto resalte y no se mezcle con el gradiente de atrás */
+.diploma {
+    background: #FFFFFF; /* Blanco puro */
+    /* El resto de tus estilos del diploma se quedan igual */
+    border: 10px solid var(--color-secundario);
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 800px;
+    margin: 40px auto;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3); /* Sombra más fuerte para que resalte */
+    text-align: center;
+    font-family: 'Georgia', serif;
+}
+
+/* --- ESTILOS DE IMPRESIÓN --- */
+@media print {
+    /* Ocultar todo lo que no sea el diploma */
+    body * {
+        visibility: hidden;
+    }
+    .diploma, .diploma * {
+        visibility: visible;
+    }
+    .diploma {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border: 10px solid #000; /* Forzar borde en B/N */
+        box-shadow: none;
+    }
+    .no-imprimir {
+        display: none !important;
+    }
+}

@@ -1,0 +1,586 @@
+/* css/inicio.css */
+
+/* --- HEADER --- */
+.header {
+    background-color: var(--color-blanco);
+    box-shadow: var(--sombra-suave);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 40px; /* Ajusta según tu imagen */
+    width: auto;
+}
+
+.logo-texto {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navegacion a:not(.btn) {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navegacion a:not(.btn):hover {
+    color: var(--color-secundario);
+}
+
+/* --- HERO BANNER --- */
+.hero {
+    background-color: var(--color-gris-claro);
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.hero-contenido {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-texto {
+    flex: 1;
+}
+
+.hero-texto h1 {
+    font-family: "Merriweather", serif; /* Opcional: forzarlo aquí también */
+    font-size: 2.6rem; /* Un poco más pequeño para que respire */
+    font-weight: 700;
+}
+
+.hero-texto p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.hero-imagen {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-imagen img {
+    max-width: 100%;
+    border-radius: var(--borde-radio);
+    box-shadow: var(--sombra-suave);
+    /* Si no tienes imagen, puedes usar un fondo temporal */
+    /* background: var(--color-secundario); height: 400px; */
+}
+
+/* --- SECCIONES GENERALES --- */
+.seccion {
+    padding: 80px 0;
+}
+
+.titulo-seccion {
+    font-size: 2.5rem;
+    color: var(--color-texto);
+    margin-bottom: 20px;
+}
+
+.subtitulo-seccion {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* --- SOBRE NOSOTROS --- */
+.sobre-nosotros {
+    background-color: var(--color-blanco);
+}
+
+/* --- OFERTA ACADÉMICA --- */
+.oferta-academica {
+    background-color: #F8F9FA; /* Color base */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.8s ease-in-out, background-color 0.8s ease-in-out;
+    position: relative;
+    /* Añadimos un overlay oscuro para que las tarjetas resalten si el fondo es muy claro */
+}
+
+/* Clases que activaremos desde JS al hacer hover */
+.oferta-academica.fondo-ingles {
+    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../images/usa1.jpg'); /* Londres */
+}
+
+.oferta-academica.fondo-mandarin {
+    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../images/china2.jpg'); /* China */
+}
+
+.oferta-academica.fondo-italiano {
+    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../images/italia1.jpg'); /* Italia */
+}
+
+.grid-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    justify-items: center; /* Centramos las tarjetas */
+}
+
+/* --- DISEÑO FLIP CARD --- */
+.flip-card {
+    background-color: transparent;
+    width: 300px;  /* Un poco más ancha que el ejemplo original */
+    height: 400px; /* Más alta para que quepa el texto atrás */
+    perspective: 1000px;
+    font-family: var(--fuente-principal);
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Efecto de volteo al pasar el mouse */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Estilos compartidos por ambas caras */
+.flip-card-front, .flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.15);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: var(--borde-radio);
+    padding: 20px;
+}
+
+/* Cara Frontal */
+.flip-card-front {
+    color: white;
+}
+
+/* Colores planos dependiendo del idioma */
+.flip-card-front.ingles { background-color: #1A3B66; /* Azul bandera UK */ }
+.flip-card-front.mandarin { background-color: #D21F3C; /* Rojo bandera China */ }
+.flip-card-front.italiano { background-color: #009246; /* Verde bandera Italia */ }
+
+.bandera-icono {
+    font-size: 4rem; /* Tamaño de la bandera emoji */
+    margin-bottom: 15px;
+    /* Si usas imágenes en vez de emojis, ajusta esto */
+}
+
+.flip-card-front h3 {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Cara Trasera */
+.flip-card-back {
+    background-color: var(--color-blanco);
+    color: var(--color-texto);
+    transform: rotateY(180deg);
+    border: 1px solid var(--color-gris-claro);
+    justify-content: flex-start;
+    padding-top: 30px;
+}
+
+.flip-card-back h4 {
+    color: var(--color-secundario);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.flip-card-back .descripcion-corta {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.flip-card-back .lista-puntos {
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+    font-size: 0.85rem;
+    width: 100%;
+}
+
+.flip-card-back .lista-puntos li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.flip-card-back .lista-puntos li::before {
+    content: "✓";
+    color: var(--color-primario);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* --- BENEFICIOS --- */
+.beneficios {
+    background-color: var(--color-blanco);
+}
+
+.grid-beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.beneficio-item h3 {
+    color: var(--color-secundario);
+    margin-bottom: 10px;
+}
+
+/* --- ESTADÍSTICAS --- */
+.estadisticas {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    padding: 60px 0;
+}
+
+.grid-estadisticas {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.estadistica h3 {
+    font-size: 3rem;
+    color: var(--color-acento);
+    margin-bottom: 10px;
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: var(--color-texto);
+    color: var(--color-blanco);
+    padding: 60px 0 30px;
+}
+
+.footer h2 {
+    margin-bottom: 15px;
+}
+
+.separador-footer {
+    border: 0;
+    border-top: 1px solid #444;
+    margin: 40px 0 20px;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* --- RESPONSIVE BÁSICO --- */
+@media (max-width: 768px) {
+    .header-contenido {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .navegacion {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-texto h1 {
+    font-family: "Oi", serif; /* 👈 Fuente para el título principal */
+    font-size: 2.8rem; /* Le bajamos un poquito el tamaño porque Oi es muy ancha */
+    color: var(--color-texto);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+    
+    .hero-imagen img {
+        margin-top: 20px;
+    }
+}
+
+
+/* ==========================================================
+   🆕 SECCIONES NUEVAS Y ANIMACIONES
+   ========================================================== */
+
+
+html { scroll-behavior: smooth; }
+
+/* --- Aparición al hacer scroll (solo si hay JavaScript) --- */
+.js .revelar {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.js .revelar.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* --- Espacio para imágenes (se llena solo al poner la imagen) --- */
+.foto {
+    position: relative;
+    min-height: 280px;
+    border-radius: var(--borde-radio);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    background: linear-gradient(135deg, var(--color-secundario), var(--color-primario));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-blanco);
+    font-weight: bold;
+    text-align: center;
+}
+.foto img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* --- Cómo funciona --- */
+.como-funciona { background-color: #F8F9FA; }
+
+.grid-pasos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.paso {
+    background: var(--color-blanco);
+    border-radius: var(--borde-radio);
+    padding: 30px 24px;
+    text-align: center;
+    box-shadow: var(--sombra-suave);
+    border-top: 5px solid var(--color-primario);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.paso:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+.paso-num {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    font-size: 1.6rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.paso h3 { color: var(--color-secundario); margin-bottom: 8px; }
+
+/* --- Bloques con imagen (zigzag) --- */
+.bloques { background-color: var(--color-blanco); }
+
+.bloque {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 70px;
+}
+.bloque:last-child { margin-bottom: 0; }
+.bloque.inverso .foto { order: 2; }
+
+.bloque-texto h3 {
+    font-size: 1.8rem;
+    color: var(--color-secundario);
+    margin-bottom: 12px;
+}
+.bloque-texto > p { margin-bottom: 16px; color: #555; }
+
+.lista-puntos {
+    list-style: none;
+    padding: 0;
+}
+.lista-puntos li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 8px;
+}
+.lista-puntos li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-primario);
+    font-weight: bold;
+}
+
+/* --- Galería --- */
+.galeria-seccion { background-color: #F8F9FA; }
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+}
+.galeria .foto { min-height: 200px; font-size: 2rem; }
+.galeria .foto:hover img { transform: scale(1.08); }
+
+/* --- Testimonios --- */
+.testimonios { background-color: var(--color-blanco); }
+
+.grid-testimonios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+.testimonio {
+    background: #F8F9FA;
+    border-radius: var(--borde-radio);
+    padding: 28px;
+    border-left: 5px solid var(--color-acento);
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s;
+}
+.testimonio:hover { transform: translateY(-5px); }
+.testimonio > p { font-style: italic; margin-bottom: 18px; }
+
+.autor { display: flex; align-items: center; gap: 12px; }
+.autor small { display: block; color: #777; }
+.avatar1 {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-secundario);
+    color: var(--color-blanco);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.avatar2 {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.avatar3 {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-extra);
+    color: var(--color-blanco);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* --- Preguntas frecuentes --- */
+.faq { background-color: #F8F9FA; }
+
+.faq-lista {
+    max-width: 800px;
+    margin: 40px auto 0;
+}
+.faq-lista details {
+    background: var(--color-blanco);
+    border-radius: var(--borde-radio);
+    box-shadow: var(--sombra-suave);
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+.faq-lista summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 18px 56px 18px 22px;
+    font-weight: bold;
+    position: relative;
+}
+.faq-lista summary::-webkit-details-marker { display: none; }
+.faq-lista summary::after {
+    content: "+";
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    translate: 0 -50%;
+    font-size: 1.6rem;
+    color: var(--color-primario);
+    transition: rotate 0.3s;
+}
+.faq-lista details[open] summary::after { rotate: 45deg; }
+.faq-lista details[open] summary { color: var(--color-secundario); }
+.faq-lista details p { padding: 0 22px 18px; color: #555; }
+
+/* --- Menos movimiento si el usuario lo prefiere --- */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .revelar { opacity: 1; transform: none; transition: none; }
+    .paso, .testimonio, .foto img { transition: none; }
+}
+
+/* --- Celular --- */
+@media (max-width: 768px) {
+    .bloque { grid-template-columns: 1fr; gap: 24px; margin-bottom: 50px; }
+    .bloque.inverso .foto { order: 0; }
+    .galeria { grid-template-columns: repeat(2, 1fr); }
+}
