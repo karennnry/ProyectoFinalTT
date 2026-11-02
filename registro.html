@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Estudiante | TalkaTive</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    
+    <style>
+        .contenedor-registro {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .volver-inicio {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--color-secundario);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .volver-inicio:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-registro">
+        <!-- Volver al inicio arriba -->
+        <a href="index.html" class="volver-inicio">← Volver al inicio</a>
+        
+        <div class="form_area">
+            <p class="title">Únete a TalkaTive</p>
+            <p class="subtitle-text">Completa tus datos para acceder al curso que elijas.</p>
+            
+            <form id="formularioRegistro">
+                
+                <div class="form_group">
+                    <label class="sub_title" for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" required placeholder="Ej. Ana María" class="form_style">
+                </div>
+
+                <div class="form_group">
+                    <label class="sub_title" for="email">Correo electrónico:</label>
+                    <input type="email" id="email" required placeholder="ejemplo@correo.com" class="form_style">
+                </div>
+
+                <div class="form_group">
+                    <label class="sub_title" for="telefono">Número de teléfono:</label>
+                    <input type="tel" id="telefono" required placeholder="Ej. +502 1234 5678" class="form_style">
+                </div>
+
+                <div class="form_group">
+                    <label class="sub_title" for="idioma">¿Qué idioma deseas aprender?</label>
+                    <select id="idioma" required class="form_style">
+                        <option value="" disabled selected>Selecciona un idioma...</option>
+                        <option value="ingles">Inglés</option>
+                        <option value="mandarin">Mandarín (Chino Estándar)</option>
+                        <option value="italiano">Italiano</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-bloque" style="margin-top: 15px;">
+                    <span class="text">Registrarse y Acceder al Curso</span>
+                </button>
+                
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/registro.js"></script>
+</body>
+</html>

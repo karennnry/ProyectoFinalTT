@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados y Diploma | TalkaTive</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/diploma.css">
+</head>
+<body>
+
+        <header class="header no-imprimir">
+        <div class="contenedor header-contenido">
+            <div class="logo">
+                <!-- ENLACE SECRETO AL ADMIN -->
+                <a href="admin.html" title="Ir al panel" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                    <!-- REEMPLAZAR CON TU LOGO -->
+                    <img src="img/logo.png" alt="Logo TalkaTive" class="logo-img" onerror="this.style.display='none'">
+                    <img src="images/logo.png" alt="Logo TalkaTive" class="logo-img" onerror="this.style.display='none'">
+                <span class="logo-texto">TalkaTive</span>
+                </a>
+            </div>
+            <div>
+                <a href="index.html" class="btn btn-secundario" style="padding: 8px 15px; font-size: 14px;">
+                    <span class="text">Volver al Inicio</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="contenedor" style="margin-top: 40px;">
+        
+        <!-- Mensaje si no aprobó -->
+        <div id="mensajeReprobado" class="tarjeta texto-centrado" style="display: none; border-top-color: #dc3545;">
+            <h2 style="color: #dc3545;">Lo sentimos, no has aprobado.</h2>
+            <p>Tu calificación fue: <strong id="notaReprobado"></strong></p>
+            <p>Necesitas al menos 6 puntos para obtener tu diploma. ¡No te rindas, puedes intentarlo de nuevo!</p>
+            <a href="evaluacion.html" class="btn mt-20" style="background-color: #dc3545;">
+                <span class="text">Intentar de nuevo</span>
+            </a>
+        </div>
+
+        <!-- Diploma (solo si aprueba) -->
+        <div id="contenedorDiploma" class="diploma" style="display: none;">
+            <div class="diploma-logo" style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+    <img src="images/logo.png" alt="Logo" style="height: 60px;" onerror="this.style.display='none'">
+    TalkaTive
+</div>
+            <h1>Diploma de Aprobación</h1>
+            <h2>Se otorga el presente diploma a:</h2>
+            
+            <div class="nombre-estudiante" id="nombreDiploma">Cargando...</div>
+            
+            <p>Por haber completado satisfactoriamente la evaluación del curso de:</p>
+            <p><strong id="cursoDiploma" style="font-size: 22px; color: var(--color-secundario);">Cargando...</strong></p>
+            
+            <div class="nota-final">Calificación Final: <span id="notaDiploma">0</span>/10</div>
+            
+            <p style="font-size: 14px; color: #777;">Emitido el <span id="fechaDiploma"></span></p>
+
+            <div class="firmas">
+                <div class="firma">Dirección Académica</div>
+                <div class="firma">TalkaTive Idiomas</div>
+            </div>
+        </div>
+
+        <!-- Botones de acción (solo si aprueba) -->
+        <div id="accionesDiploma" class="texto-centrado mb-20 no-imprimir" style="display: none;">
+            <button onclick="window.print()" class="btn-descarga" type="button">
+    <span class="btn-descarga__text">Imprimir / PDF</span>
+    <span class="btn-descarga__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" class="svg">
+            <path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path>
+            <path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path>
+            <path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path>
+        </svg>
+    </span>
+</button>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/resultado.js"></script>
+</body>
+</html>

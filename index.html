@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalkaTive | Escuela de Idiomas</title>
+    <!-- Enlace a los estilos globales y específicos -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/inicio.css">
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="header">
+        <div class="contenedor header-contenido">
+            <div class="logo">
+                <!-- ENLACE SECRETO AL ADMIN -->
+                <a href="admin.html" title="Ir al panel" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                    <!-- REEMPLAZAR CON TU LOGO -->
+                    <img src="img/logo.png" alt="Logo TalkaTive" class="logo-img" onerror="this.style.display='none'">
+                    <img src="images/logo.png" alt="Logo TalkaTive" class="logo-img" onerror="this.style.display='none'">
+                    <span class="logo-texto">TalkaTive</span>
+                </a>
+            </div>
+            <nav class="navegacion">
+                <a href="#sobre-nosotros">Nosotros</a>
+                <a href="#idiomas">Cursos</a>
+                <a href="#beneficios">Beneficios</a>
+                <a href="#testimonios">Testimonios</a>
+                <a href="registro.html" class="btn">
+                    <span class="text">Inscribirme / Solicitar clase de prueba</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. BANNER HERO -->
+    <section id="sobre-nosotros" class="hero">
+        <div class="contenedor hero-contenido">
+            <div class="hero-texto">
+                <h1>Aprende el idioma que abrirá las puertas a tu futuro</h1>
+                <p>Domina Inglés, Mandarín e Italiano con métodos prácticos, dinámicos y diseñados para que hables desde el primer día.</p>
+                <a href="registro.html" class="btn">
+                    <span class="text">Inscribirme / Solicitar clase de prueba</span>
+                </a>
+            </div>
+            <!-- REEMPLAZAR CON IMAGEN DE FONDO O ILUSTRACIÓN -->
+            <div class="hero-imagen">
+                <img src="images/img5.jpg" alt="Estudiantes aprendiendo idiomas">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. SOBRE NOSOTROS -->
+    <section class="seccion sobre-nosotros">
+        <div class="contenedor texto-centrado">
+            <h2 class="titulo-seccion">Conecta con el mundo a través de las palabras</h2>
+            <p class="subtitulo-seccion">En nuestra academia creemos que aprender un nuevo idioma no se trata solo de gramática, sino de abrir nuevas oportunidades profesionales, culturales y personales.</p>
+            <p>Te ofrecemos un aprendizaje flexible, moderno y enfocado en la conversación real. Ya sea para trabajar, viajar o superarte, estamos aquí para guiarte en cada paso.</p>
+        </div>
+    </section>
+
+    <!-- 3. OFERTA ACADÉMICA -->
+    <section id="idiomas" class="seccion oferta-academica">
+        <div class="contenedor">
+            <h2 class="titulo-seccion texto-centrado">Nuestros Idiomas</h2>
+
+            <div class="grid-tarjetas">
+                <!-- Tarjeta Inglés -->
+                <div class="flip-card" data-idioma="ingles">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front ingles">
+                            <!-- Puedes cambiar el emoji por una imagen <img> cuando tengas las tuyas -->
+                            <div class="bandera-icono">🗽</div>
+                            <h3>Inglés</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>Inglés Global y Profesional</h4>
+                            <p class="descripcion-corta">El idioma imprescindible para el crecimiento laboral y académico.</p>
+                            <ul class="lista-puntos">
+                                <li>Enfoque comunicativo y conversación fluida.</li>
+                                <li>Niveles desde Principiante (A1) hasta Avanzado (C1).</li>
+                                <li>Preparación para certificación y negocios.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Mandarín -->
+                <div class="flip-card" data-idioma="mandarin">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front mandarin">
+                            <div class="bandera-icono">🍜</div>
+                            <h3>Mandarín</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>Mandarín (Chino Estándar)</h4>
+                            <p class="descripcion-corta">Conecta con la economía más influyente del mundo y destaca en el mercado global.</p>
+                            <ul class="lista-puntos">
+                                <li>Pronunciación (Pinyin) y tonos claros desde el inicio.</li>
+                                <li>Escritura de caracteres esenciales (Hanzi).</li>
+                                <li>Enfoque en comercio, negocios y cultura oriental.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Italiano -->
+                <div class="flip-card" data-idioma="italiano">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front italiano">
+                            <div class="bandera-icono">🍕</div>
+                            <h3>Italiano</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>Italiano y Cultura</h4>
+                            <p class="descripcion-corta">Descubre la riqueza de una lengua llena de historia, arte, diseño y gastronomía.</p>
+                            <ul class="lista-puntos">
+                                <li>Aprendizaje rápido para hispanohablantes.</li>
+                                <li>Práctica intensiva de expresión oral y vocabulario.</li>
+                                <li>Ideal para viajes, estudios y apreciación cultural.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. POR QUÉ ELEGIRNOS -->
+    <section id="beneficios" class="seccion beneficios">
+        <div class="contenedor">
+            <h2 class="titulo-seccion texto-centrado">¿Por qué elegirnos?</h2>
+            <div class="grid-beneficios">
+                <div class="beneficio-item">
+                    <h3>Método 100% Práctico</h3>
+                    <p>Clases dinámicas enfocadas en hablar con confianza desde la primera lección.</p>
+                </div>
+                <div class="beneficio-item">
+                    <h3>Profesores Calificados</h3>
+                    <p>Instructores capacitados para hacer de tu aprendizaje una experiencia entretenida y efectiva.</p>
+                </div>
+                <div class="beneficio-item">
+                    <h3>Horarios Flexibles</h3>
+                    <p>Opciones de clases presenciales o en línea que se adaptan a tu rutina.</p>
+                </div>
+                <div class="beneficio-item">
+                    <h3>Grupos Reducidos</h3>
+                    <p>Atención personalizada para garantizar tu progreso continuo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🆕 5. CÓMO FUNCIONA -->
+    <section id="como-funciona" class="seccion como-funciona">
+        <div class="contenedor">
+            <h2 class="titulo-seccion texto-centrado">Empezar es muy fácil</h2>
+            <p class="subtitulo-seccion texto-centrado">Tres pasos para comenzar a hablar un nuevo idioma.</p>
+            <div class="grid-pasos">
+                <div class="paso">
+                    <div class="paso-num">1</div>
+                    <h3>Elige tu idioma</h3>
+                    <p>Inglés, Mandarín o Italiano: escoge el que más se acerque a tus metas.</p>
+                </div>
+                <div class="paso">
+                    <div class="paso-num">2</div>
+                    <h3>Haz tu evaluación</h3>
+                    <p>Una prueba breve y gratuita para ubicarte en el nivel ideal.</p>
+                </div>
+                <div class="paso">
+                    <div class="paso-num">3</div>
+                    <h3>Empieza a hablar</h3>
+                    <p>Accede a tus lecciones y practica desde la primera clase.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🆕 6. CLASES (bloques con imagen) -->
+    <section class="seccion bloques">
+        <div class="contenedor">
+            <div class="bloque">
+                <div class="foto">
+                    <span>📷 Espacio para imagen</span>
+                    <!-- REEMPLAZAR CON TU IMAGEN: images/clase1.jpg -->
+                    <img src="images/img2.jpg" alt="Clase de idiomas en grupo" onerror="this.style.display='none'">
+                </div>
+                <div class="bloque-texto">
+                    <h3>Clases que se sienten reales</h3>
+                    <p>Practicamos situaciones de la vida diaria: pedir en un restaurante, viajar, presentarte en una entrevista o hacer negocios.</p>
+                    <ul class="lista-puntos">
+                        <li>Conversación guiada desde la primera semana.</li>
+                        <li>Actividades en parejas y en grupo.</li>
+                        <li>Retroalimentación constante de tu profesor.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bloque inverso">
+                <div class="foto">
+                    <span>📷 Espacio para imagen</span>
+                    <!-- REEMPLAZAR CON TU IMAGEN: images/clase2.jpg -->
+                    <img src="images/img3.jpg" alt="Estudiante en clase en línea" onerror="this.style.display='none'">
+                </div>
+                <div class="bloque-texto">
+                    <h3>Aprende a tu ritmo, donde estés</h3>
+                    <p>Nuestra plataforma te permite repasar videos, lecturas y ejercicios cuando quieras, y luego poner a prueba lo aprendido.</p>
+                    <ul class="lista-puntos">
+                        <li>Videolecciones y material de lectura.</li>
+                        <li>Evaluaciones para medir tu avance.</li>
+                        <li>Acceso desde computadora o celular.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🆕 7. GALERÍA -->
+    <section class="seccion galeria-seccion">
+        <div class="contenedor">
+            <h2 class="titulo-seccion texto-centrado">Vive la experiencia TalkaTive</h2>
+            <div class="galeria">
+                <div class="foto"><span>📷</span><img src="images/china1.jpg" alt="Momento en clase 1" onerror="this.style.display='none'"></div>
+                <div class="foto"><span>📷</span><img src="images/italia2.jpg" alt="Momento en clase 2" onerror="this.style.display='none'"></div>
+                <div class="foto"><span>📷</span><img src="images/img11.jpg" alt="Momento en clase 3" onerror="this.style.display='none'"></div>
+                <div class="foto"><span>📷</span><img src="images/usa3.jpg" alt="Momento en clase 4" onerror="this.style.display='none'"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. ESTADÍSTICAS -->
+    <section class="seccion estadisticas">
+        <div class="contenedor grid-estadisticas">
+            <div class="estadistica">
+                <h3 class="contador" data-meta="3">3</h3>
+                <p>Idiomas de alta demanda global</p>
+            </div>
+            <div class="estadistica">
+                <h3 class="contador" data-meta="80" data-pre="+" data-suf="%">+80%</h3>
+                <p>Práctica conversacional en cada clase</p>
+            </div>
+            <div class="estadistica">
+                <h3 class="contador" data-meta="100" data-suf="%">100%</h3>
+                <p>Atención y acompañamiento personalizado</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🆕 9. TESTIMONIOS (REEMPLAZAR por opiniones reales) -->
+    <section id="testimonios" class="seccion testimonios">
+        <div class="contenedor">
+            <h2 class="titulo-seccion texto-centrado">Lo que dicen nuestros estudiantes</h2>
+            <div class="grid-testimonios">
+                <div class="testimonio">
+                    <p>“En pocas semanas ya podía mantener una conversación básica. Las clases son muy dinámicas.”</p>
+                    <div class="autor"><span class="avatar1">L</span><div><strong>Lara J.</strong><small>Curso de Inglés</small></div></div>
+                </div>
+                <div class="testimonio">
+                    <p>“Los tonos del mandarín me parecían imposibles, pero aquí se explican paso a paso.”</p>
+                    <div class="autor"><span class="avatar2">V</span><div><strong>Violet H.</strong><small>Curso de Mandarín</small></div></div>
+                </div>
+                <div class="testimonio">
+                    <p>“Aprendí italiano para mi viaje y la plataforma en línea me ayudó a repasar a mi ritmo.”</p>
+                    <div class="autor"><span class="avatar3">J</span><div><strong>Jay T.</strong><small>Curso de Italiano</small></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🆕 10. PREGUNTAS FRECUENTES -->
+    <section id="preguntas" class="seccion faq">
+        <div class="contenedor">
+            <h2 class="titulo-seccion texto-centrado">Preguntas frecuentes</h2>
+            <div class="faq-lista">
+                <details>
+                    <summary>¿Necesito saber el idioma antes de empezar?</summary>
+                    <p>No. Los cursos inician desde nivel principiante (A1) y avanzas a tu propio ritmo.</p>
+                </details>
+                <details>
+                    <summary>¿Las clases son presenciales o en línea?</summary>
+                    <p>Ofrecemos ambas opciones, para que elijas la que mejor se adapte a tu rutina.</p>
+                </details>
+                <details>
+                    <summary>¿Cuánto dura cada curso?</summary>
+                    <p>El primer módulo dura 4 semanas, y después continúas con los siguientes niveles.</p>
+                </details>
+                <details>
+                    <summary>¿Cómo sé cuál es mi nivel?</summary>
+                    <p>Al inscribirte puedes solicitar una evaluación de nivel gratuita para ubicarte correctamente.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. CTA FINAL Y FOOTER -->
+    <footer class="footer">
+        <div class="contenedor texto-centrado">
+            <h2>¿Listo para empezar tu viaje hacia un nuevo idioma?</h2>
+            <p>Agenda tu evaluación de nivel gratuita o solicita más información sobre nuestras próximas inscripciones.</p>
+            <a href="https://wa.me/1234567890" target="_blank" class="btn btn-secundario mt-20">
+                <span class="text">Hablar por WhatsApp / Contáctanos</span>
+            </a>
+
+            <hr class="separador-footer">
+            <p class="copyright">&copy; 2024 TalkaTive - Escuela de Idiomas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/db.js"></script>
+    <script>
+        // Cambiar el fondo de la sección de idiomas al pasar el mouse
+        const seccionIdiomas = document.querySelector('.oferta-academica');
+        const tarjetas = document.querySelectorAll('.flip-card');
+
+        tarjetas.forEach(tarjeta => {
+            tarjeta.addEventListener('mouseenter', () => {
+                const idioma = tarjeta.getAttribute('data-idioma');
+                seccionIdiomas.classList.add(`fondo-${idioma}`);
+            });
+            tarjeta.addEventListener('mouseleave', () => {
+                seccionIdiomas.className = 'seccion oferta-academica'; // Resetea las clases
+            });
+        });
+
+        // 🆕 Aparición suave al hacer scroll
+        const reducir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const items = document.querySelectorAll('.beneficio-item, .paso, .bloque, .galeria .foto, .testimonio, .faq-lista details, .estadistica, .titulo-seccion');
+
+        items.forEach((el, i) => {
+            el.classList.add('revelar');
+            el.style.transitionDelay = ((i % 4) * 0.08) + 's';
+        });
+
+        // 🆕 Contadores animados de las estadísticas
+        function animarContador(el) {
+            const meta = parseInt(el.dataset.meta, 10);
+            const pre = el.dataset.pre || '';
+            const suf = el.dataset.suf || '';
+            if (reducir) { el.textContent = pre + meta + suf; return; }
+            const inicio = performance.now();
+            const duracion = 1400;
+            function paso(ahora) {
+                const t = Math.min((ahora - inicio) / duracion, 1);
+                el.textContent = pre + Math.round(meta * t) + suf;
+                if (t < 1) requestAnimationFrame(paso);
+            }
+            requestAnimationFrame(paso);
+        }
+
+        const observador = new IntersectionObserver((entradas) => {
+            entradas.forEach(entrada => {
+                if (!entrada.isIntersecting) return;
+                entrada.target.classList.add('visible');
+                entrada.target.querySelectorAll('.contador').forEach(animarContador);
+                observador.unobserve(entrada.target);
+            });
+        }, { threshold: 0.15 });
+
+        items.forEach(el => observador.observe(el));
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación | TalkaTive</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    
+    <style>
+        .contenedor-evaluacion {
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        .pregunta-bloque {
+            background: white;
+            padding: 25px;
+            border-radius: var(--borde-radio);
+            box-shadow: var(--sombra-suave);
+            margin-bottom: 25px;
+            border-left: 5px solid var(--color-primario);
+        }
+        .pregunta-bloque h3 {
+            margin-bottom: 15px;
+            color: var(--color-secundario);
+        }
+        .opcion {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .opcion input {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        .input-texto-corto {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="contenedor header-contenido">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo TalkaTive" class="logo-img" onerror="this.style.display='none'">
+                <span class="logo-texto">TalkaTive</span>
+            </div>
+            <div>
+                <span id="nombreEstudiante" style="font-weight: bold;">Cargando...</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="contenedor-evaluacion">
+        <div class="tarjeta texto-centrado mb-20">
+            <h1 style="color: var(--color-secundario);">Evaluación Final</h1>
+            <p>Demuestra lo que has aprendido. Tienes 10 preguntas, necesitas <strong>6 puntos</strong> para aprobar.</p>
+        </div>
+
+        <form id="formularioEvaluacion">
+            <!-- Las preguntas se inyectarán aquí con JavaScript -->
+            <div id="contenedorPreguntas"></div>
+
+            <button type="submit" class="btn btn-bloque" style="font-size: 18px; padding: 15px;">
+                <span class="text">Enviar Evaluación y Ver Resultados</span>
+            </button>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/evaluacion.js"></script>
+</body>
+</html>

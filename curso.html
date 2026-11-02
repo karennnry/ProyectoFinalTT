@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso en Línea | TalkaTive</title>
+    
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/curso.css">
+</head>
+<body>
+
+    <!-- Barra superior simple -->
+    <header class="header">
+        <div class="contenedor header-contenido">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo TalkaTive" class="logo-img" onerror="this.style.display='none'">
+                <span class="logo-texto">TalkaTive</span>
+            </div>
+            <div>
+                <span id="nombreEstudiante" style="font-weight: bold; margin-right: 15px;">Cargando...</span>
+                <button onclick="cerrarSesion()" class="btn btn-secundario" style="padding: 8px 15px; font-size: 14px;">
+                    <span class="text">Salir</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Encabezado del Curso -->
+    <div class="cabecera-curso">
+        <h1 id="tituloCurso">Cargando curso...</h1>
+        <p>Duración: 4 semanas | Nivel: Principiante (A1)</p>
+        <div class="barra"><div id="barraProgreso"></div></div>
+        <small id="textoProgreso">Progreso: 0%</small>
+    </div>
+
+    <!-- Contenido Dinámico -->
+    <main class="contenido-curso" id="contenidoDinamico">
+        <!-- El JavaScript inyectará todo el contenido aquí -->
+        <p class="texto-centrado">Cargando lecciones...</p>
+    </main>
+
+    <!-- Botón para ir a la evaluación -->
+    <div class="contenedor texto-centrado mb-20" style="max-width: 800px; margin: 0 auto 60px auto;">
+        <div class="alerta-info">
+            <strong>¿Ya terminaste de estudiar?</strong> Es momento de poner a prueba tus conocimientos.
+        </div>
+        <a href="evaluacion.html" class="btn" style="font-size: 18px; padding: 15px 40px;">
+            <span class="text">Comenzar Evaluación ➡️</span>
+        </a>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="pie">
+        <p>TalkaTive — Aprende idiomas a tu ritmo</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/curso.js"></script>
+</body>
+</html>

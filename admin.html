@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración | TalkaTive</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    
+    <style>
+        /* Solo dejamos los estilos de la tabla y los badges, 
+           el formulario ya usa las clases de estilos.css */
+        
+        .admin-panel {
+            display: none;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+        
+        .tabla-admin {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            box-shadow: var(--sombra-suave);
+            border-radius: var(--borde-radio);
+            overflow: hidden;
+        }
+        
+        .tabla-admin th, .tabla-admin td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tabla-admin th {
+            background-color: var(--color-secundario);
+            color: white;
+        }
+        
+        .tabla-admin tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .badge-aprobado {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .badge-reprobado {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .volver-inicio {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--color-secundario);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .volver-inicio:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <!-- PANTALLA DE LOGIN -->
+    <div id="pantallaLogin" style="max-width: 600px; margin: 40px auto; padding: 0 20px;">
+        
+        <a href="index.html" class="volver-inicio">← Volver al inicio</a>
+
+        <div class="form_area">
+            <p class="title">Acceso Administrativo</p>
+            <p class="subtitle-text">Ingresa tus credenciales para ver las notas.</p>
+            
+            <form id="formularioLogin">
+                <div class="form_group">
+                    <label class="sub_title" for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" required placeholder="admin" class="form_style">
+                </div>
+                
+                <div class="form_group">
+                    <label class="sub_title" for="password">Contraseña:</label>
+                    <input type="password" id="password" required placeholder="****" class="form_style">
+                </div>
+                
+                <button type="submit" class="btn btn-bloque" style="margin-top: 15px;">
+                    <span class="text">Ingresar</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- PANEL DE ADMINISTRACIÓN (Oculto por defecto) -->
+    <div id="panelAdmin" class="contenedor admin-panel">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2 style="color: var(--color-secundario);">📊 Panel de Administración</h2>
+            <button onclick="cerrarSesionAdmin()" class="btn btn-rojo" style="padding: 8px 15px;">
+                <span class="text">Cerrar Sesión</span>
+            </button>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Resumen de Ventas / Notas</h3>
+            <p>Total de estudiantes registrados: <strong id="totalEstudiantes">0</strong></p>
+            <p>Total de evaluaciones realizadas: <strong id="totalEvaluaciones">0</strong></p>
+        </div>
+
+        <h3 class="mt-20">Historial de Notas</h3>
+        <table class="tabla-admin">
+            <thead>
+                <tr>
+                    <th>ID Estudiante</th>
+                    <th>Nombre</th>
+                    <th>Idioma</th>
+                    <th>Calificación</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla">
+                <!-- Las filas se cargan con JS -->
+            </tbody>
+        </table>
+        
+        <div class="texto-centrado mt-20 mb-20">
+            <button onclick="borrarBaseDeDatos()" class="btn btn-rojo">
+                <span class="text">🗑️ Borrar Todos los Datos de Prueba</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
