@@ -12,9 +12,7 @@
         <header class="header no-imprimir">
         <div class="contenedor header-contenido">
             <div class="logo">
-                <!-- ENLACE SECRETO AL ADMIN -->
                 <a href="admin.html" title="Ir al panel" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
-                    <!-- REEMPLAZAR CON TU LOGO -->
                     <img src="img/logo.png" alt="Logo TalkaTive" class="logo-img" onerror="this.style.display='none'">
                     <img src="images/logo.png" alt="Logo TalkaTive" class="logo-img" onerror="this.style.display='none'">
                 <span class="logo-texto">TalkaTive</span>
@@ -30,7 +28,6 @@
 
     <div class="contenedor" style="margin-top: 40px;">
         
-        <!-- Mensaje si no aprobó -->
         <div id="mensajeReprobado" class="tarjeta texto-centrado" style="display: none; border-top-color: #dc3545;">
             <h2 style="color: #dc3545;">Lo sentimos, no has aprobado.</h2>
             <p>Tu calificación fue: <strong id="notaReprobado"></strong></p>
@@ -40,7 +37,6 @@
             </a>
         </div>
 
-        <!-- Diploma (solo si aprueba) -->
         <div id="contenedorDiploma" class="diploma" style="display: none;">
             <div class="diploma-logo" style="display: flex; justify-content: center; align-items: center; gap: 15px;">
     <img src="images/logo.png" alt="Logo" style="height: 60px;" onerror="this.style.display='none'">
@@ -64,7 +60,6 @@
             </div>
         </div>
 
-        <!-- Botones de acción (solo si aprueba) -->
         <div id="accionesDiploma" class="texto-centrado mb-20 no-imprimir" style="display: none;">
             <button onclick="window.print()" class="btn-descarga" type="button">
     <span class="btn-descarga__text">Imprimir / PDF</span>
@@ -80,7 +75,6 @@
 
     </div>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
     <script src="js/db.js"></script>
     <script src="js/resultado.js"></script>
