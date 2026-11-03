@@ -1,6 +1,3 @@
-// js/curso.js
-
-// 🆕 Datos extra para cada idioma (Orientados a la evaluación)
 const VOCAB = {
     ingles: [
         ["Hello", "Hola"], 
@@ -43,7 +40,6 @@ const SEMANAS = [
 
 const TAREAS = ["Ver el video de la lección", "Leer el material de lectura", "Repasar el vocabulario", "Practicar con el enlace externo"];
 
-// 🆕 Construye las secciones adicionales (Incluye el efecto cortina)
 function extrasHtml(idioma) {
     const tarjetas = VOCAB[idioma].map(p =>
         `<div class="vocab">
@@ -66,7 +62,7 @@ function extrasHtml(idioma) {
 
     return `
         <h3>🧠 Vocabulario clave</h3>
-        <p>Pasa el cursor sobre las palabras para ver su significado.</p> <!-- Texto actualizado -->
+        <p>Pasa el cursor sobre las palabras para ver su significado.</p>
         <div class="vocab-grid">${tarjetas}</div>
 
         <h3>🗓️ Plan de 4 semanas</h3>
@@ -78,7 +74,6 @@ function extrasHtml(idioma) {
     `;
 }
 
-// 🆕 Barra de progreso (se guarda en el navegador)
 function iniciarProgreso(idioma) {
     const clave = 'progreso_' + idioma;
     let guardado = [];
@@ -103,7 +98,6 @@ function iniciarProgreso(idioma) {
     actualizar();
 }
 
-// 1. Iniciar la página
 async function cargarCurso() {
     const sesion = await verificarSesionActiva();
     if (!sesion) return;
@@ -212,5 +206,4 @@ referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
     }
 }
 
-// Ejecutar al cargar la página
 document.addEventListener('DOMContentLoaded', cargarCurso);

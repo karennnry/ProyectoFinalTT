@@ -1,6 +1,3 @@
-/* css/inicio.css */
-
-/* --- HEADER --- */
 .header {
     background-color: var(--color-blanco);
     box-shadow: var(--sombra-suave);
@@ -23,7 +20,7 @@
 }
 
 .logo-img {
-    height: 40px; /* Ajusta según tu imagen */
+    height: 40px;
     width: auto;
 }
 
@@ -50,7 +47,6 @@
     color: var(--color-secundario);
 }
 
-/* --- HERO BANNER --- */
 .hero {
     background-color: var(--color-gris-claro);
     padding: 60px 0;
@@ -68,8 +64,8 @@
 }
 
 .hero-texto h1 {
-    font-family: "Merriweather", serif; /* Opcional: forzarlo aquí también */
-    font-size: 2.6rem; /* Un poco más pequeño para que respire */
+    font-family: "Merriweather", serif;
+    font-size: 2.6rem;
     font-weight: 700;
 }
 
@@ -88,11 +84,8 @@
     max-width: 100%;
     border-radius: var(--borde-radio);
     box-shadow: var(--sombra-suave);
-    /* Si no tienes imagen, puedes usar un fondo temporal */
-    /* background: var(--color-secundario); height: 400px; */
 }
 
-/* --- SECCIONES GENERALES --- */
 .seccion {
     padding: 80px 0;
 }
@@ -109,33 +102,29 @@
     margin-bottom: 15px;
 }
 
-/* --- SOBRE NOSOTROS --- */
 .sobre-nosotros {
     background-color: var(--color-blanco);
 }
 
-/* --- OFERTA ACADÉMICA --- */
 .oferta-academica {
-    background-color: #F8F9FA; /* Color base */
+    background-color: #F8F9FA;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     transition: background-image 0.8s ease-in-out, background-color 0.8s ease-in-out;
     position: relative;
-    /* Añadimos un overlay oscuro para que las tarjetas resalten si el fondo es muy claro */
 }
 
-/* Clases que activaremos desde JS al hacer hover */
 .oferta-academica.fondo-ingles {
-    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../images/usa1.jpg'); /* Londres */
+    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../images/usa1.jpg');
 }
 
 .oferta-academica.fondo-mandarin {
-    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../images/china2.jpg'); /* China */
+    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../images/china2.jpg');
 }
 
 .oferta-academica.fondo-italiano {
-    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../images/italia1.jpg'); /* Italia */
+    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../images/italia1.jpg');
 }
 
 .grid-tarjetas {
@@ -143,14 +132,13 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 40px;
-    justify-items: center; /* Centramos las tarjetas */
+    justify-items: center;
 }
 
-/* --- DISEÑO FLIP CARD --- */
 .flip-card {
     background-color: transparent;
-    width: 300px;  /* Un poco más ancha que el ejemplo original */
-    height: 400px; /* Más alta para que quepa el texto atrás */
+    width: 300px;
+    height: 400px;
     perspective: 1000px;
     font-family: var(--fuente-principal);
 }
@@ -164,12 +152,10 @@
     transform-style: preserve-3d;
 }
 
-/* Efecto de volteo al pasar el mouse */
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
 
-/* Estilos compartidos por ambas caras */
 .flip-card-front, .flip-card-back {
     box-shadow: 0 8px 14px 0 rgba(0,0,0,0.15);
     position: absolute;
@@ -185,20 +171,17 @@
     padding: 20px;
 }
 
-/* Cara Frontal */
 .flip-card-front {
     color: white;
 }
 
-/* Colores planos dependiendo del idioma */
-.flip-card-front.ingles { background-color: #1A3B66; /* Azul bandera UK */ }
-.flip-card-front.mandarin { background-color: #D21F3C; /* Rojo bandera China */ }
-.flip-card-front.italiano { background-color: #009246; /* Verde bandera Italia */ }
+.flip-card-front.ingles { background-color: #1A3B66; }
+.flip-card-front.mandarin { background-color: #D21F3C; }
+.flip-card-front.italiano { background-color: #009246; }
 
 .bandera-icono {
-    font-size: 4rem; /* Tamaño de la bandera emoji */
+    font-size: 4rem;
     margin-bottom: 15px;
-    /* Si usas imágenes en vez de emojis, ajusta esto */
 }
 
 .flip-card-front h3 {
@@ -209,7 +192,6 @@
     letter-spacing: 2px;
 }
 
-/* Cara Trasera */
 .flip-card-back {
     background-color: var(--color-blanco);
     color: var(--color-texto);
@@ -254,7 +236,6 @@
     font-weight: bold;
 }
 
-/* --- BENEFICIOS --- */
 .beneficios {
     background-color: var(--color-blanco);
 }
@@ -272,7 +253,6 @@
     margin-bottom: 10px;
 }
 
-/* --- ESTADÍSTICAS --- */
 .estadisticas {
     background-color: var(--color-secundario);
     color: var(--color-blanco);
@@ -293,7 +273,6 @@
     margin-bottom: 10px;
 }
 
-/* --- FOOTER --- */
 .footer {
     background-color: var(--color-texto);
     color: var(--color-blanco);
@@ -315,7 +294,6 @@
     color: #aaa;
 }
 
-/* --- RESPONSIVE BÁSICO --- */
 @media (max-width: 768px) {
     .header-contenido {
         flex-direction: column;
@@ -333,8 +311,8 @@
     }
 
     .hero-texto h1 {
-    font-family: "Oi", serif; /* 👈 Fuente para el título principal */
-    font-size: 2.8rem; /* Le bajamos un poquito el tamaño porque Oi es muy ancha */
+    font-family: "Oi", serif;
+    font-size: 2.8rem;
     color: var(--color-texto);
     margin-bottom: 20px;
     line-height: 1.2;
@@ -345,15 +323,8 @@
     }
 }
 
-
-/* ==========================================================
-   🆕 SECCIONES NUEVAS Y ANIMACIONES
-   ========================================================== */
-
-
 html { scroll-behavior: smooth; }
 
-/* --- Aparición al hacer scroll (solo si hay JavaScript) --- */
 .js .revelar {
     opacity: 0;
     transform: translateY(24px);
@@ -364,7 +335,6 @@ html { scroll-behavior: smooth; }
     transform: none;
 }
 
-/* --- Espacio para imágenes (se llena solo al poner la imagen) --- */
 .foto {
     position: relative;
     min-height: 280px;
@@ -388,7 +358,6 @@ html { scroll-behavior: smooth; }
     transition: transform 0.6s ease;
 }
 
-/* --- Cómo funciona --- */
 .como-funciona { background-color: #F8F9FA; }
 
 .grid-pasos {
@@ -425,7 +394,6 @@ html { scroll-behavior: smooth; }
 }
 .paso h3 { color: var(--color-secundario); margin-bottom: 8px; }
 
-/* --- Bloques con imagen (zigzag) --- */
 .bloques { background-color: var(--color-blanco); }
 
 .bloque {
@@ -462,7 +430,6 @@ html { scroll-behavior: smooth; }
     font-weight: bold;
 }
 
-/* --- Galería --- */
 .galeria-seccion { background-color: #F8F9FA; }
 
 .galeria {
@@ -474,7 +441,6 @@ html { scroll-behavior: smooth; }
 .galeria .foto { min-height: 200px; font-size: 2rem; }
 .galeria .foto:hover img { transform: scale(1.08); }
 
-/* --- Testimonios --- */
 .testimonios { background-color: var(--color-blanco); }
 
 .grid-testimonios {
@@ -535,7 +501,6 @@ html { scroll-behavior: smooth; }
     flex-shrink: 0;
 }
 
-/* --- Preguntas frecuentes --- */
 .faq { background-color: #F8F9FA; }
 
 .faq-lista {
@@ -571,14 +536,12 @@ html { scroll-behavior: smooth; }
 .faq-lista details[open] summary { color: var(--color-secundario); }
 .faq-lista details p { padding: 0 22px 18px; color: #555; }
 
-/* --- Menos movimiento si el usuario lo prefiere --- */
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .js .revelar { opacity: 1; transform: none; transition: none; }
     .paso, .testimonio, .foto img { transition: none; }
 }
 
-/* --- Celular --- */
 @media (max-width: 768px) {
     .bloque { grid-template-columns: 1fr; gap: 24px; margin-bottom: 50px; }
     .bloque.inverso .foto { order: 0; }

@@ -1,13 +1,12 @@
-/* css/estilos.css */
 @import url('https://fonts.googleapis.com/css2?family=Peralta&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Peralta&display=swap');
-/* 1. Variables de Color y Fuentes (Basado en el logo TalkaTive) */
+
 :root {
-    --color-primario: #6DCD55; /* Verde tucán */
+    --color-primario: #6DCD55;
     --color-primario-bottom: #ECDC35;
     --color-primario-hover: #55a843;
-    --color-secundario: #376ea0; /* Azul */
-    --color-acento: #EDDC35; /* Amarillo */
+    --color-secundario: #376ea0;
+    --color-acento: #EDDC35;
     --color-texto: #2D2D2D;
     --color-fondo: #DFE2E5;
     --color-blanco: #FFFFFF;
@@ -18,14 +17,13 @@
     --sombra-suave: 0 4px 6px rgba(0,0,0,0.1);
     --borde-radio: 10px;
 }
-/* Fuente global para títulos */
+
 h1, h2 {
     font-family: "Merriweather", serif;
-    font-weight: 700; /* Negrita para que resalte */
+    font-weight: 700;
     color: var(--color-texto);
 }
 
-/* 2. Reseteo básico */
 * {
     margin: 0;
     padding: 0;
@@ -39,7 +37,6 @@ body {
     line-height: 1.6;
 }
 
-/* 3. Utilidades y Contenedores */
 .contenedor {
     max-width: 1100px;
     margin: 0 auto;
@@ -50,7 +47,6 @@ body {
 .mt-20 { margin-top: 20px; }
 .mb-20 { margin-bottom: 20px; }
 
-/* Barra superior */
 .header {
     background: var(--color-blanco);
     box-shadow: var(--sombra-suave);
@@ -77,24 +73,22 @@ body {
 .logo-img { height: 40px; }
 
 .logo-texto {
-    font-family: "Peralta", serif; /* 👈 Cambiamos a Peralta */
+    font-family: "Peralta", serif;
     font-size: 26px; 
-    font-weight: 400; /* Peralta ya tiene su propio grosor, no necesita negrita */
+    font-weight: 400;
     color: var(--color-primario);
     letter-spacing: 1px; 
     line-height: 1;
 }
 
-/* Foco visible para quien navega con teclado */
 a:focus-visible, button:focus-visible {
     outline: 3px solid var(--color-acento);
     outline-offset: 2px;
 }
 
-/* 4. Botones (Estilo Bubbles de Uiverse) */
 .btn, .bubbles {
-    --c1: #FFFFFF; /* Color del texto al hacer hover (blanco) */
-    --c2: var(--color-primario); /* Color base del botón (Verde TalkaTive) */
+    --c1: #FFFFFF;
+    --c2: var(--color-primario);
     --size-letter: 16px; 
     padding: 12px 24px;
     font-size: var(--size-letter);
@@ -150,7 +144,6 @@ a:focus-visible, button:focus-visible {
 .btn-secundario, .bubbles.secundario { --c2: var(--color-secundario); }
 .btn-rojo, .bubbles.rojo { --c2: #dc3545; }
 
-/* 5. Tarjetas (Para el Home y el Curso) */
 .tarjeta {
     background: var(--color-blanco);
     border-radius: var(--borde-radio);
@@ -160,9 +153,6 @@ a:focus-visible, button:focus-visible {
     border-top: 5px solid var(--color-primario-bottom);
 }
 
-/* =========================================
-   6. NUEVO DISEÑO DE FORMULARIO (Neo-Brutalista)
-   ========================================= */
 .form_area {
     background-color: #F4F9F4; 
     padding: 40px;
@@ -205,7 +195,6 @@ a:focus-visible, button:focus-visible {
     font-size: 15px;
 }
 
-/* Aquí está la magia para que los inputs se estiren y tengan sombra */
 .form_area .form_style {
     outline: none;
     border: 2px solid var(--color-texto);

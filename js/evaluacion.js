@@ -1,8 +1,3 @@
-// js/evaluacion.js
-
-// 1. Banco de Preguntas (10 por idioma)
-// Usamos interfaces variadas: radio, checkbox, select y texto.
-// 1. Banco de Preguntas (10 por idioma, instrucciones en español)
 const BANCO_PREGUNTAS = {
     ingles: [
         { tipo: "radio", pregunta: "1. ¿Cómo se dice 'Hola' en inglés?", opciones: ["Goodbye", "Hello", "Please", "Thanks"], correcta: "Hello" },
@@ -45,7 +40,6 @@ const BANCO_PREGUNTAS = {
 let idiomaActual = "";
 let idEstudianteActual = null;
 
-// 2. Cargar la evaluación
 async function cargarEvaluacion() {
     const sesion = await verificarSesionActiva();
     if (!sesion) return;
@@ -58,7 +52,6 @@ async function cargarEvaluacion() {
     const contenedor = document.getElementById('contenedorPreguntas');
     let html = "";
 
-    // Generamos el HTML de cada pregunta
     preguntas.forEach((p, index) => {
         html += `<div class="pregunta-bloque">`;
         html += `<h3>${p.pregunta}</h3>`;
@@ -70,7 +63,6 @@ async function cargarEvaluacion() {
         } 
         else if (p.tipo === "checkbox") {
             p.opciones.forEach(op => {
-                // Para checkboxes, el valor lo guardaremos como un string separado por comas al enviar
                 html += `<label class="opcion"><input type="checkbox" name="p${index}" value="${op}"> ${op}</label>`;
             });
         } 
@@ -92,7 +84,6 @@ async function cargarEvaluacion() {
     contenedor.innerHTML = html;
 }
 
-// 3. Calificar al enviar el formulario
 document.getElementById('formularioEvaluacion').addEventListener('submit', async function(event) {
     event.preventDefault();
 
@@ -100,16 +91,13 @@ document.getElementById('formularioEvaluacion').addEventListener('submit', async
     let puntaje = 0;
     let respuestasUsuario = {};
 
-    // Revisamos pregunta por pregunta
     preguntas.forEach((p, index) => {
         let respuestaSeleccionada = "";
 
         if (p.tipo === "checkbox") {
-            // Juntamos todas las opciones marcadas en un array y lo pasamos a texto ordenado
             const marcados = Array.from(document.querySelectorAll(`input[name="p${index}"]:checked`)).map(cb => cb.value);
             respuestaSeleccionada = marcados.sort().join(", ");
             
-            // Validamos: la respuesta correcta es un array, así que lo ordenamos y comparamos
             const correctaOrdenada = [...p.correcta].sort().join(", ");
             if (respuestaSeleccionada === correctaOrdenada) {
                 puntaje++;
@@ -117,14 +105,12 @@ document.getElementById('formularioEvaluacion').addEventListener('submit', async
         } 
         else {
             if (p.tipo === "texto") {
-                // Para texto, quitamos espacios y pasamos a minúsculas
                 const input = document.querySelector(`input[name="p${index}"]`);
                 respuestaSeleccionada = input ? input.value.trim().toLowerCase() : "";
                 if (respuestaSeleccionada === p.correcta.toLowerCase()) {
                     puntaje++;
                 }
             } else {
-                // Radio o Select
                 const opcion = document.querySelector(`input[name="p${index}"]:checked`) || document.querySelector(`select[name="p${index}"]`);
                 respuestaSeleccionada = opcion ? opcion.value : "";
                 if (respuestaSeleccionada === p.correcta) {
@@ -136,14 +122,13 @@ document.getElementById('formularioEvaluacion').addEventListener('submit', async
         respuestasUsuario[`pregunta_${index + 1}`] = respuestaSeleccionada;
     });
 
-    // 4. Guardar en la Base de Datos
     try {
-        const aprobado = puntaje >= 6; // Mínimo 6 de 10
+        const aprobado = puntaje >= 6;
         
         await db.evaluaciones.add({
             idEstudiante: idEstudianteActual,
             idioma: idiomaActual,
-            respuestas: JSON.stringify(respuestasUsuario), // Guardamos las respuestas
+            respuestas: JSON.stringify(respuestasUsuario),
             calificacion: puntaje,
             aprobado: aprobado,
             fechaEvaluacion: new Date().toLocaleString()
@@ -151,7 +136,6 @@ document.getElementById('formularioEvaluacion').addEventListener('submit', async
 
         alert(`Tu calificación es: ${puntaje}/10. ${aprobado ? '¡Felicidades, has aprobado!' : 'No alcanzaste la nota mínima.'}`);
         
-        // Redirigimos a la página de resultados
         window.location.href = "resultado.html";
 
     } catch (error) {
@@ -160,5 +144,4 @@ document.getElementById('formularioEvaluacion').addEventListener('submit', async
     }
 });
 
-// Iniciar
 document.addEventListener('DOMContentLoaded', cargarEvaluacion);

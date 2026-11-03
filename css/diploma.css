@@ -1,9 +1,3 @@
-/* css/diploma.css */
-
-/* Contenedor del diploma con diseño de certificado */
-
-
-/* Borde interior decorativo */
 .diploma::before {
     content: "";
     position: absolute;
@@ -75,18 +69,17 @@
     font-family: var(--fuente-principal);
 }
 
-/* --- Botón de Descarga/Impresión (Uiverse) --- */
 .btn-descarga {
   position: relative;
-  width: 200px; /* Un poco más ancho para que quepa el texto */
+  width: 200px;
   height: 45px;
   cursor: pointer;
   display: flex;
   align-items: center;
   border: 1px solid #146c54;
-  background-color: #618C4D; /* Verde similar al de TalkaTive */
+  background-color: #618C4D;
   overflow: hidden;
-  border-radius: 5px; /* Un pequeño borde redondeado */
+  border-radius: 5px;
   margin: 0 auto;
 }
 
@@ -140,33 +133,26 @@
   border: 1px solid #146c54;
 }
 
-/* Fondo para la página del diploma */
 body.fondo-diploma {
-    /* Tu gradiente radial */
     background: radial-gradient(125% 125% at 50% 10%, #fff 40%, #D55429 100%);
-    background-attachment: fixed; /* Para que no se mueva si hay scroll */
+    background-attachment: fixed;
     min-height: 100vh;
 }
 
-/* Nos aseguramos de que el diploma tenga un fondo blanco sólido 
-   para que el texto resalte y no se mezcle con el gradiente de atrás */
 .diploma {
-    background: #FFFFFF; /* Blanco puro */
-    /* El resto de tus estilos del diploma se quedan igual */
+    background: #FFFFFF;
     border: 10px solid var(--color-secundario);
     border-radius: 10px;
     padding: 40px;
     max-width: 800px;
     margin: 40px auto;
     position: relative;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3); /* Sombra más fuerte para que resalte */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     text-align: center;
     font-family: 'Georgia', serif;
 }
 
-/* --- ESTILOS DE IMPRESIÓN --- */
 @media print {
-    /* Ocultar todo lo que no sea el diploma */
     body * {
         visibility: hidden;
     }
@@ -178,7 +164,7 @@ body.fondo-diploma {
         left: 0;
         top: 0;
         width: 100%;
-        border: 10px solid #000; /* Forzar borde en B/N */
+        border: 10px solid #000;
         box-shadow: none;
     }
     .no-imprimir {

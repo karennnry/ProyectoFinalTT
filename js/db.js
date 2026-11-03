@@ -1,4 +1,3 @@
-// js/db.js
 const db = new Dexie("AcademiaTalkaTiveDB");
 
 db.version(1).stores({
