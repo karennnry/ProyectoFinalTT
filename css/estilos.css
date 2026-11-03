@@ -1,1 +1,231 @@
+/* css/estilos.css */
+@import url('https://fonts.googleapis.com/css2?family=Peralta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Peralta&display=swap');
+/* 1. Variables de Color y Fuentes (Basado en el logo TalkaTive) */
+:root {
+    --color-primario: #6DCD55; /* Verde tucán */
+    --color-primario-bottom: #ECDC35;
+    --color-primario-hover: #55a843;
+    --color-secundario: #376ea0; /* Azul */
+    --color-acento: #EDDC35; /* Amarillo */
+    --color-texto: #2D2D2D;
+    --color-fondo: #DFE2E5;
+    --color-blanco: #FFFFFF;
+    --color-gris-claro: #E9ECEF;
+    --color-extra: #D55429;
+    
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --sombra-suave: 0 4px 6px rgba(0,0,0,0.1);
+    --borde-radio: 10px;
+}
+/* Fuente global para títulos */
+h1, h2 {
+    font-family: "Merriweather", serif;
+    font-weight: 700; /* Negrita para que resalte */
+    color: var(--color-texto);
+}
 
+/* 2. Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* 3. Utilidades y Contenedores */
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.texto-centrado { text-align: center; }
+.mt-20 { margin-top: 20px; }
+.mb-20 { margin-bottom: 20px; }
+
+/* Barra superior */
+.header {
+    background: var(--color-blanco);
+    box-shadow: var(--sombra-suave);
+    border-bottom: 4px solid var(--color-primario-bottom);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img { height: 40px; }
+
+.logo-texto {
+    font-family: "Peralta", serif; /* 👈 Cambiamos a Peralta */
+    font-size: 26px; 
+    font-weight: 400; /* Peralta ya tiene su propio grosor, no necesita negrita */
+    color: var(--color-primario);
+    letter-spacing: 1px; 
+    line-height: 1;
+}
+
+/* Foco visible para quien navega con teclado */
+a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 2px;
+}
+
+/* 4. Botones (Estilo Bubbles de Uiverse) */
+.btn, .bubbles {
+    --c1: #FFFFFF; /* Color del texto al hacer hover (blanco) */
+    --c2: var(--color-primario); /* Color base del botón (Verde TalkaTive) */
+    --size-letter: 16px; 
+    padding: 12px 24px;
+    font-size: var(--size-letter);
+    background-color: transparent;
+    border: calc(var(--size-letter) / 5) solid var(--c2);
+    border-radius: 0.4em;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    transition: 300ms cubic-bezier(0.83, 0, 0.17, 1);
+    
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--c2);
+    font-family: var(--fuente-principal);
+}
+
+.btn .text, .bubbles .text {
+    font-weight: 700;
+    color: inherit;
+    position: relative;
+    z-index: 1;
+    transition: color 700ms cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.btn::before, .btn::after,
+.bubbles::before, .bubbles::after {
+    content: "";
+    width: 150%;
+    aspect-ratio: 1/1;
+    scale: 0;
+    transition: 1000ms cubic-bezier(0.76, 0, 0.24, 1);
+    background-color: var(--c2);
+    border-radius: 50%;
+    position: absolute;
+    translate: -50% -50%;
+}
+
+.btn::before, .bubbles::before { top: 0; left: 0; }
+.btn::after, .bubbles::after { top: 100%; left: 100%; }
+
+.btn:hover, .bubbles:hover { transform: translateY(-2px); }
+.btn:hover > .text, .btn:hover,
+.bubbles:hover > .text, .bubbles:hover { color: var(--c1); }
+.btn:hover::before, .btn:hover::after,
+.bubbles:hover::before, .bubbles:hover::after { scale: 1; }
+.btn:active, .bubbles:active { transform: translateY(0) scale(0.98); filter: brightness(0.9); }
+
+.btn-bloque { display: flex; width: 100%; }
+.btn-secundario, .bubbles.secundario { --c2: var(--color-secundario); }
+.btn-rojo, .bubbles.rojo { --c2: #dc3545; }
+
+/* 5. Tarjetas (Para el Home y el Curso) */
+.tarjeta {
+    background: var(--color-blanco);
+    border-radius: var(--borde-radio);
+    padding: 30px;
+    box-shadow: var(--sombra-suave);
+    margin-bottom: 20px;
+    border-top: 5px solid var(--color-primario-bottom);
+}
+
+/* =========================================
+   6. NUEVO DISEÑO DE FORMULARIO (Neo-Brutalista)
+   ========================================= */
+.form_area {
+    background-color: #F4F9F4; 
+    padding: 40px;
+    border: 3px solid var(--color-texto);
+    border-radius: 15px;
+    box-shadow: 6px 6px 0px 0px var(--color-acento); 
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form_area .title {
+    color: var(--color-texto);
+    font-weight: 900;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.form_area .subtitle-text {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #555;
+    font-size: 15px;
+}
+
+.form_area .form_group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form_area .sub_title {
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--color-texto);
+    font-size: 15px;
+}
+
+/* Aquí está la magia para que los inputs se estiren y tengan sombra */
+.form_area .form_style {
+    outline: none;
+    border: 2px solid var(--color-texto);
+    box-shadow: 3px 3px 0px 0px var(--color-secundario);
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: var(--fuente-principal);
+    transition: all 0.2s ease;
+    background-color: var(--color-blanco);
+}
+
+.form_area .form_style:focus {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px 0px 0px var(--color-secundario);
+}
+
+.form_area .btn {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+}
